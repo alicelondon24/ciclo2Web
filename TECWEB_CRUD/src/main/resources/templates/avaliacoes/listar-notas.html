@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>listar Notas</title>
+</head>
+<body>
+    <div class="container">
+    	<h3>Lista de Avaliações</h3>
+    	<div class="panel panel-default">
+    	<div class="panel-heading">
+    		<strong>Avaliações</strong>
+    	</div>
+    	
+    	<div class="panel-body">
+    		<div class="table-responsive">
+    			<table class="table table-sm table striped table-hover table-bordered">
+    				<thead>
+    					<tr>
+    						<th>Aluno</th>
+    						<th>Curso</th>
+    						<th>Conceito</th>
+    					</tr>
+    				</thead>
+    				<tbody>
+    					<tr th:each="avaliacao: ${avaliacoes}">
+    						<td th:text="${avaliacao.alunoCUrso.aluno.nome"></td>
+    						<td th:text="${avaliacao.alunoCUrso.curso.nome"></td>
+    						<td th:text="${avaliacao.conceito"></td>
+    					</tr>
+    				</tbody>
+    			</table>
+    		</div>
+    		<div class="panel-footer">
+    			<a class="btn btn-sm btn-success" th:href="@{/avaliacoes/adiciona}">Adicionar</a>
+    		</div>
+    	</div>
+    </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lançar Notas</title>
+</head>
+<body>
+    <div class="container">
+    	<h3>Lançar Nota</h3>
+    	<form th:object="${avaliacao}" th:action="@{/avalicoes/save}" method="post">
+    		<div class="form-group">
+    			<label for="slunod">Aluno</label>
+    			<select name="alunoCurso.aluno.alunoId" id="alunos" class="form-control">
+    				<option th:each="aluno : ${alunos}" th:value="${aluno.alunoId}" th:text="${aluno.nome}"></option>
+    			</select>
+    		</div>
+    		<div class="form-group">
+    			<label for="cursos">Curso</label>
+    			<select name="alunoCurso.curso.cursoId" id="cursos" class="form-control">
+    				<option th:each="curso: ${cursos}" th:value="${curso.cursoId}" th:text="${curso.nome}"></option>
+    			</select>
+    		</div>
+    		<div class="form-group">
+    			<label for="conceito">Conceito</label>
+    			<input th:field="*{conceito}" id="conceito" class="form-control" type="text" placeholder="Exemplo: bom"></input>
+    		</div>
+    		<div class="form-group">
+    			<input id="enviar" class="btn btn-primary" type="submit" value="Salvar"></input>
+    		</div>
+    	
+    	</form>
+    </div>
+    
+</body>
+</html>
